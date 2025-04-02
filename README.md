@@ -5,9 +5,8 @@
 - refer `lodash@4.0.0` in the workspace file
 
 ```json5
-  "dependencies": {
-    "lodash": "4.0.0"
-  },
+catalog:
+  lodash: 4.0.0
 ```
 
 ## pnpm-lock.yaml
@@ -21,12 +20,18 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    lodash:
+      specifier: 4.17.21
+      version: 4.17.21
+
 importers:
 
   .:
     dependencies:
       lodash:
-        specifier: 4.17.21
+        specifier: 'catalog:'
         version: 4.17.21
 
 packages:
@@ -37,6 +42,7 @@ packages:
 snapshots:
 
   lodash@4.17.21: {}
+
 ```
 
 
